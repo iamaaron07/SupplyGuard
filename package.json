@@ -1,0 +1,20 @@
+{
+  "name": "supplyguard",
+  "version": "1.0.0",
+  "description": "SupplyGuard AI and blockchain provenance system for counterfeit medicine detection.",
+  "private": true,
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:local": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
+    "demo": "hardhat run scripts/demo.js",
+    "api": "python -m uvicorn backend.main:app --host 127.0.0.1 --port 8000"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "hardhat": "^2.22.19"
+  }
+}
+

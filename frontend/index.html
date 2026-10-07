@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SupplyGuard | Product Verification</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">SG</span><span>SupplyGuard</span></div>
+      <span class="status-dot"><i></i> Verification console</span>
+    </header>
+    <section class="intro">
+      <p class="eyebrow">PHARMACEUTICAL AUTHENTICATION</p>
+      <h1>Trust what moves<br><em>through the chain.</em></h1>
+      <p class="lede">Upload a package label to run the trained YOLO classifier and anchor the result to an immutable batch history.</p>
+    </section>
+    <section class="workspace">
+      <form id="verify-form" class="panel">
+        <div class="panel-head"><span>01</span><h2>Inspect package</h2></div>
+        <label class="dropzone" id="dropzone">
+          <input id="image-input" type="file" accept="image/jpeg,image/png,image/webp" required>
+          <div id="upload-copy"><strong>Drop a label image here</strong><small>JPG, PNG or WEBP · max 10 MB</small></div>
+          <img id="preview" alt="Selected package preview">
+        </label>
+        <div class="fields">
+          <label>Batch ID <input name="batch_id" placeholder="Optional for AI-only check"></label>
+          <label>Location <input name="location" value="AI Verification Station"></label>
+        </div>
+        <label class="toggle"><input name="record_blockchain" type="checkbox"><span></span> Record verification on local ledger</label>
+        <button id="verify-button" type="submit"><span>Verify product</span><b>→</b></button>
+        <p id="error" class="error" role="alert"></p>
+      </form>
+      <section class="panel result-panel" aria-live="polite">
+        <div class="panel-head"><span>02</span><h2>Verification result</h2></div>
+        <div id="empty-state" class="empty"><div class="scan-icon">+</div><p>Awaiting a package image</p><small>The live model result will appear here.</small></div>
+        <div id="result" class="result hidden">
+          <div class="result-label"><span id="result-kicker">MODEL VERDICT</span><strong id="prediction">REAL</strong></div>
+          <div class="confidence"><div class="confidence-row"><span>Confidence</span><b id="confidence">0%</b></div><div class="bar"><i id="confidence-bar"></i></div></div>
+          <dl><div><dt>Image fingerprint</dt><dd id="hash">-</dd></div><div><dt>Ledger status</dt><dd id="ledger">Not recorded</dd></div></dl>
+        </div>
+      </section>
+    </section>
+    <footer>SupplyGuard AI classification · append-only provenance ledger</footer>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>

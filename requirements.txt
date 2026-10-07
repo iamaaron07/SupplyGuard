@@ -1,0 +1,17 @@
+ultralytics
+torch
+torchvision
+opencv-python
+Pillow
+numpy
+pandas
+scikit-learn
+matplotlib
+diffusers
+transformers
+accelerate
+safetensors
+fastapi
+uvicorn
+python-multipart
+

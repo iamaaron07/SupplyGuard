@@ -1,0 +1,1 @@
+"""SupplyGuard application backend."""

@@ -1,0 +1,26 @@
+.env
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.cache
+.supplyguard-upload/
+.pytest_cache/
+.mypy_cache/
+
+# Generated datasets and reports
+dataset/prepared/
+dataset/synthetic/
+runs/
+
+# Model weights and checkpoints
+*.pt
+models/*.pt
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+node_modules/
